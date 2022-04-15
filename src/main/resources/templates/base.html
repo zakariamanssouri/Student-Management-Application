@@ -1,5 +1,8 @@
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <!-- META DATA -->
@@ -9,22 +12,22 @@
     <meta name="description" content="Students">
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/brand/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/brand/favicon.ico" />
 
     <!-- TITLE -->
     <title>Students </title>
 
     <!-- BOOTSTRAP CSS -->
-    <link id="style" href="../assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="style" href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- STYLE CSS -->
-    <link href="../assets/css/style.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
 
     <!--- FONT-ICONS CSS -->
-    <link href="../assets/css/icons.css" rel="stylesheet" />
+    <link href="/css/icons.css" rel="stylesheet" />
 
     <!-- COLOR SKIN CSS -->
-    <link id="theme" rel="stylesheet" type="text/css" media="all" href="../assets/colors/color1.css" />
+    <link id="theme" rel="stylesheet" type="text/css" media="all" href="/colors/color1.css" />
 
 </head>
 
@@ -42,8 +45,8 @@
                         <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
                         <!-- sidebar-toggle-->
                         <a class="logo-horizontal " href="index.html">
-                            <img src="../assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
-                            <img src="../assets/images/brand/logo-3.png" class="header-brand-img light-logo1"
+                            <img src="/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
+                            <img src="/images/brand/logo-3.png" class="header-brand-img light-logo1"
                                 alt="logo">
                         </a>
                         <!-- LOGO -->
@@ -83,6 +86,7 @@
                                                         <i class="fa fa-search" aria-hidden="true"></i>
                                                     </div>
                                                 </div>
+
                                             </div>
                                         </div>
                                       
@@ -99,7 +103,7 @@
                                   
                                         <div class="dropdown d-flex profile-1">
                                             <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
-                                                <img src="../assets/images/users/10.jpg" alt="profile-user"
+                                                <img src="/images/users/10.jpg" alt="profile-user"
                                                     class="avatar  profile-user brround cover-image">
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
@@ -130,11 +134,11 @@
                 <div class="app-sidebar">
                     <div class="side-header">
                         <a class="header-brand1" href="index.html">
-                            <img src="../assets/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
-                            <img src="../assets/images/brand/logo-1.png" class="header-brand-img toggle-logo"
+                            <img src="/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
+                            <img src="/images/brand/logo-1.png" class="header-brand-img toggle-logo"
                                 alt="logo">
-                            <img src="../assets/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
-                            <img src="../assets/images/brand/logo-3.png" class="header-brand-img light-logo1"
+                            <img src="/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
+                            <img src="/images/brand/logo-3.png" class="header-brand-img light-logo1"
                                 alt="logo">
                         </a>
                         <!-- LOGO -->
@@ -148,11 +152,17 @@
                             <li class="sub-category">
                                 <h3>Main</h3>
                             </li>
+
+
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="index.html"><i
-                                        class="side-menu__icon fe fe-user"></i><span
-                                        class="side-menu__label">Manage Students</span></a>
+                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fe fe-user"></i><span class="side-menu__label">Manage Students</span><i class="angle fe fe-chevron-right"></i></a>
+                                <ul class="slide-menu">
+                                    <li class="side-menu-label1"><a href="javascript:void(0)">Apps</a></li>
+                                    <li><a th:href="@{/students}" class="slide-item"> Students list</a></li>
+                                    <li><a th:href="@{/students}" class="slide-item"> New Student</a></li>
+                                </ul>
                             </li>
+
                         
                         </ul>
                         <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
@@ -166,278 +176,10 @@
 
             <!--app-content open-->
          <!--app-content open-->
-         <div class="main-content app-content mt-0">
-            <div class="side-app">
+            <section layout:fragment="content">
 
-                <!-- CONTAINER -->
-                <div class="main-container container-fluid">
+            </section>
 
-                    <!-- PAGE-HEADER -->
-                    <div class="page-header">
-                        <h1 class="page-title">Manage Students</h1>
-                        <div>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="javascript:void(0)">Apps</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">User List</li>
-                            </ol>
-                        </div>
-                    </div>
-                    <!-- PAGE-HEADER END -->
-
-                    <!-- ROW OPEN -->
-                    <div class="row row-cards">
-                        <div class="col-lg-12 col-xl-12">
-                            <div class="input-group mb-5">
-                                <input type="text" class="form-control" placeholder="Search">
-                                <div class="input-group-text btn btn-primary">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header border-bottom-0 p-4">
-                                    <h2 class="card-title">1 - 30 of 546 users</h2>
-                                    <div class="page-options ms-auto">
-                                        <select class="form-control select2 w-100">
-                                                <option value="asc">Latest</option>
-                                                <option value="desc">Oldest</option>
-                                            </select>
-                                    </div>
-                                </div>
-                                <div class="e-table px-5 pb-5">
-                                    <div class="table-responsive table-lg">
-                                        <table class="table border-top table-bordered mb-0">
-                                            <thead>
-                                                <tr>
-                                                    <th class="text-center">
-
-                                                    </th>
-                                                    <th class="text-center">Photo</th>
-                                                    <th>Name</th>
-                                                    <th>Date</th>
-                                                    <th class="text-center">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="align-middle text-center">
-                                                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                            <input class="custom-control-input" id="item-1" type="checkbox"> <label class="custom-control-label" for="item-1"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center"><img alt="image" class="avatar avatar-md br-7" src="../assets/images/users/16.jpg"></td>
-                                                    <td class="text-nowrap align-middle">Adam Cotter</td>
-                                                    <td class="text-nowrap align-middle"><span>09 Dec 2017</span></td>
-
-                                                    <td class="text-center align-middle">
-                                                        <div class="btn-group align-top">
-                                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle text-center">
-                                                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                            <input class="custom-control-input" id="item-2" type="checkbox"> <label class="custom-control-label" for="item-2"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center"><img alt="image" class="avatar avatar-md br-7" src="../assets/images/users/15.jpg"></td>
-                                                    <td class="text-nowrap align-middle">Pauline Noble</td>
-                                                    <td class="text-nowrap align-middle"><span>26 Jan 2018</span></td>
-
-                                                    <td class="text-center align-middle">
-                                                        <div class="btn-group align-top">
-                                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle text-center">
-                                                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                            <input class="custom-control-input" id="item-3" type="checkbox"> <label class="custom-control-label" for="item-3"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center"><img alt="image" class="avatar avatar-md br-7" src="../assets/images/users/4.jpg"></td>
-                                                    <td class="text-nowrap align-middle">Sherilyn Metzel</td>
-                                                    <td class="text-nowrap align-middle"><span>27 Jan 2018</span></td>
-
-                                                    <td class="text-center align-middle">
-                                                        <div class="btn-group align-top">
-                                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle text-center">
-                                                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                            <input class="custom-control-input" id="item-4" type="checkbox"> <label class="custom-control-label" for="item-4"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center"><img alt="image" class="avatar avatar-md br-7" src="../assets/images/users/3.jpg"></td>
-                                                    <td class="text-nowrap align-middle">Terrie Boaler</td>
-                                                    <td class="text-nowrap align-middle"><span>20 Jan 2018</span></td>
-
-                                                    <td class="text-center align-middle">
-                                                        <div class="btn-group align-top">
-                                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle text-center">
-                                                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                            <input class="custom-control-input" id="item-5" type="checkbox"> <label class="custom-control-label" for="item-5"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center"><img alt="image" class="avatar avatar-md br-7" src="../assets/images/users/19.jpg"></td>
-                                                    <td class="text-nowrap align-middle">Rutter Pude</td>
-                                                    <td class="text-nowrap align-middle"><span>13 Jan 2018</span></td>
-
-                                                    <td class="text-center align-middle">
-                                                        <div class="btn-group align-top">
-                                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary  badge" type="button"><i class="fa fa-trash"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle text-center">
-                                                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                            <input class="custom-control-input" id="item-6" type="checkbox"> <label class="custom-control-label" for="item-6"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center"><img alt="image" class="avatar avatar-md br-7" src="../assets/images/users/21.jpg"></td>
-                                                    <td class="text-nowrap align-middle">Clifford Benjamin</td>
-                                                    <td class="text-nowrap align-middle"><span>25 Jan 2018</span></td>
-
-                                                    <td class="text-center align-middle">
-                                                        <div class="btn-group align-top">
-                                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle text-center">
-                                                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                            <input class="custom-control-input" id="item-7" type="checkbox"> <label class="custom-control-label" for="item-7"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center"><img alt="image" class="avatar avatar-md br-7" src="../assets/images/users/12.jpg"></td>
-                                                    <td class="text-nowrap align-middle">Thedric Romans</td>
-                                                    <td class="text-nowrap align-middle"><span>12 Jan 2018</span></td>
-
-                                                    <td class="text-center align-middle">
-                                                        <div class="btn-group align-top">
-                                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle text-center">
-                                                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                            <input class="custom-control-input" id="item-8" type="checkbox"> <label class="custom-control-label" for="item-8"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center"><img alt="image" class="avatar avatar-md br-7" src="../assets/images/users/1.jpg"></td>
-                                                    <td class="text-nowrap align-middle">Haily Carthew</td>
-                                                    <td class="text-nowrap align-middle"><span>27 Jan 2018</span></td>
-
-                                                    <td class="text-center align-middle">
-                                                        <div class="btn-group align-top">
-                                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle text-center">
-                                                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                            <input class="custom-control-input" id="item-9" type="checkbox"> <label class="custom-control-label" for="item-9"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center"><img alt="image" class="avatar avatar-md br-7" src="../assets/images/users/12.jpg"></td>
-                                                    <td class="text-nowrap align-middle">Dorothea Joicey</td>
-                                                    <td class="text-nowrap align-middle"><span>12 Dec 2017</span></td>
-
-                                                    <td class="text-center align-middle">
-                                                        <div class="btn-group align-top">
-                                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle text-center">
-                                                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                            <input class="custom-control-input" id="item-10" type="checkbox"> <label class="custom-control-label" for="item-10"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center"><img alt="image" class="avatar avatar-md br-7" src="../assets/images/users/15.jpg"></td>
-                                                    <td class="text-nowrap align-middle">Mikaela Pinel</td>
-                                                    <td class="text-nowrap align-middle"><span>10 Dec 2017</span></td>
-
-                                                    <td class="text-center align-middle">
-                                                        <div class="btn-group align-top">
-                                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle text-center">
-                                                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                            <input class="custom-control-input" id="item-11" type="checkbox"> <label class="custom-control-label" for="item-11"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center"><img alt="image" class="avatar avatar-md br-7" src="../assets/images/users/12.jpg"></td>
-                                                    <td class="text-nowrap align-middle">Donnell Farries</td>
-                                                    <td class="text-nowrap align-middle"><span>03 Dec 2017</span></td>
-
-                                                    <td class="text-center align-middle">
-                                                        <div class="btn-group align-top">
-                                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="align-middle text-center">
-                                                        <div class="custom-control custom-control-inline custom-checkbox custom-control-nameless m-0 align-top">
-                                                            <input class="custom-control-input" id="item-12" type="checkbox"> <label class="custom-control-label" for="item-12"></label>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle text-center"><img alt="image" class="avatar avatar-md br-7" src="../assets/images/users/4.jpg"></td>
-                                                    <td class="text-nowrap align-middle">Letizia Puncher</td>
-                                                    <td class="text-nowrap align-middle"><span>09 Dec 2017</span></td>
-
-                                                    <td class="text-center align-middle">
-                                                        <div class="btn-group align-top">
-                                                            <button class="btn btn-sm btn-primary badge" data-target="#user-form-modal" data-bs-toggle="" type="button">Edit</button> <button class="btn btn-sm btn-primary badge" type="button"><i class="fa fa-trash"></i></button>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-5">
-                                <ul class="pagination float-end">
-                                    <li class="page-item page-prev disabled">
-                                        <a class="page-link" href="javascript:void(0)" tabindex="-1">Prev</a>
-                                    </li>
-                                    <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a></li>
-                                    <li class="page-item"><a class="page-link" href="javascript:void(0)">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="javascript:void(0)">5</a></li>
-                                    <li class="page-item page-next">
-                                        <a class="page-link" href="javascript:void(0)">Next</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- COL-END -->
-                    </div>
-                    <!-- ROW CLOSED -->
-                </div>
-                <!-- CONTAINER CLOSED -->
-            </div>
-        </div>
         <!--app-content closed-->
             <!--app-content close-->
 
@@ -453,34 +195,35 @@
     <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
 
     <!-- JQUERY JS -->
-    <script src="../assets/js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
 
     <!-- BOOTSTRAP JS -->
-    <script src="../assets/plugins/bootstrap/js/popper.min.js"></script>
-    <script src="../assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/plugins/bootstrap/js/popper.min.js"></script>
+    <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
 
  
     
     <!-- SIDEBAR JS -->
-    <script src="../assets/plugins/sidebar/sidebar.js"></script>
+    <script src="/plugins/sidebar/sidebar.js"></script>
 
    
     <!-- INTERNAL SELECT2 JS -->
-    <script src="../assets/plugins/select2/select2.full.min.js"></script>
+    <script src="/plugins/select2/select2.full.min.js"></script>
 
     <!-- INTERNAL Data tables js-->
-    <script src="../assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
-    <script src="../assets/plugins/datatable/js/dataTables.bootstrap5.js"></script>
-    <script src="../assets/plugins/datatable/dataTables.responsive.min.js"></script>
+    <script src="/plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+    <script src="/plugins/datatable/dataTables.responsive.min.js"></script>
 
-   
+
+
     <!-- SIDE-MENU JS-->
-    <script src="../assets/plugins/sidemenu/sidemenu.js"></script>
+    <script src="/plugins/sidemenu/sidemenu.js"></script>
 
     <!-- INTERNAL INDEX JS -->
 
     <!-- Color Theme js -->
-    <script src="../assets/js/themeColors.js"></script>
+    <script src="/js/themeColors.js"></script>
 
 
 </body>

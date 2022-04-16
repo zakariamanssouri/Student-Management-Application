@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="base"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+    <link id="style" href="/static/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="main-content app-content mt-0" layout:fragment="content">
+    <div class="side-app">
+
+        <!-- CONTAINER -->
+        <div class="main-container container-fluid" style="margin-top: 100px">
+
+            <!-- PAGE-HEADER -->
+            <div class="page-header">
+                <h1 class="page-title">Manage Students</h1>
+                <div>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Students</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">new</li>
+                    </ol>
+                </div>
+            </div>
+            <!-- PAGE-HEADER END -->
+
+            <!--Row-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-xl-12">
+                        <div class="card">
+                            <div class="card-header d-flex justify-content-center">
+                                <h3 class="card-title ">Add New Student</h3>
+                            </div>
+                            <div class="card-body">
+                                <form th:action="@{/admin/students/}" th:method="post" th:object="${student}">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <span class="text-danger" th:errors="${student.name}"></span>
+                                                <div class="form-floating">
+                                                    <input type="text" class="form-control" id="floatingInput"
+                                                           placeholder="Name" name="name" th:value="${student.name}">
+                                                    <label for="floatingInput">Name</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class="text-danger" th:errors="${student.email}"></span>
+
+                                                <div class="form-floating">
+                                                    <input type="email" class="form-control" id="floatingEmail"
+                                                           placeholder="Email" name="email" th:value="${student.email}" >
+                                                    <label for="floatingEmail">Email</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <span class="text-danger" th:errors="${student.lastName}"></span>
+
+                                                <div class="form-floating floating-label">
+                                                    <input type="text" class="form-control" id="floatingLastName"
+                                                           placeholder="LastName" name="lastName" th:value="${student.lastName}">
+                                                    <label for="floatingLastName">LastName</label>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <span class="text-danger" th:errors="${student.birthDate}"></span>
+                                                <div class="form-floating floating-label1">
+                                                    <input type="date" class="form-control" id="floatingDate"
+                                                           placeholder="LastName" name="birthDate" th:value="${student.birthDate}">
+                                                    <label for="floatingDate">BirthDate</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <span class="text-danger" th:errors="${student.gender}"></span>
+                                                <div class="form-group col-md-6">
+                                                    <select name="gender" class="form-control form-select select2"
+                                                            data-bs-placeholder="Select Gender" style="height: 57px;" th:field="*{gender}">
+                                                        <option value="MALE"  >MALE</option>
+                                                        <option value="FEMALE" >FEMALE</option>
+                                                    </select>
+                                                </div>
+                                                <span class="text-danger" th:errors="${student.enRegle}"></span>
+                                                <div class="form-group col-md-6 d-flex align-items-center justify-content-between">
+                                                    <p class="ms-2 me-5">En Règle</p>
+                                                    <div class="material-switch pull-right d-flex align-items-center">
+                                                        <input id="enRegle" name="enRegle" type="checkbox" th:checked="${student.isEnRegle()}?'true':false"/>
+                                                        <label for="enRegle" class="label-success"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-12 d-flex justify-content-center mt-4 fw-bold">
+                                            <button type="submit" class="btn btn-primary w-25">Add</button>
+
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--End Row-->
+        </div>
+        <!-- CONTAINER CLOSED -->
+    </div>
+</div>
+
+</body>
+</html>
+

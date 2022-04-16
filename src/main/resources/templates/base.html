@@ -45,8 +45,7 @@
                         <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
                         <!-- sidebar-toggle-->
                         <a class="logo-horizontal " href="index.html">
-                            <img src="/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
-                            <img src="/images/brand/logo-3.png" class="header-brand-img light-logo1"
+                            <img src="/images/brand/studentlogo.svg" class="header-brand-img light-logo1"
                                 alt="logo">
                         </a>
                         <!-- LOGO -->
@@ -103,8 +102,8 @@
                                   
                                         <div class="dropdown d-flex profile-1">
                                             <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
-                                                <img src="/images/users/10.jpg" alt="profile-user"
-                                                    class="avatar  profile-user brround cover-image">
+                                                <img src="/images/users/default.png" alt="profile-user"
+                                                    class="avatar  profile-user brround cover-image" style="width: 50px;height: 50px;">
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                                                 <div class="drop-heading">
@@ -134,11 +133,7 @@
                 <div class="app-sidebar">
                     <div class="side-header">
                         <a class="header-brand1" href="index.html">
-                            <img src="/images/brand/logo.png" class="header-brand-img desktop-logo" alt="logo">
-                            <img src="/images/brand/logo-1.png" class="header-brand-img toggle-logo"
-                                alt="logo">
-                            <img src="/images/brand/logo-2.png" class="header-brand-img light-logo" alt="logo">
-                            <img src="/images/brand/logo-3.png" class="header-brand-img light-logo1"
+                            <img src="/images/brand/studentlogo.svg" class="header-brand-img light-logo1"
                                 alt="logo">
                         </a>
                         <!-- LOGO -->
@@ -159,7 +154,7 @@
                                 <ul class="slide-menu">
                                     <li class="side-menu-label1"><a href="javascript:void(0)">Apps</a></li>
                                     <li><a th:href="@{/students}" class="slide-item"> Students list</a></li>
-                                    <li><a th:href="@{/students}" class="slide-item"> New Student</a></li>
+                                    <li><a th:href="@{/admin/students/new}" class="slide-item"> New Student</a></li>
                                 </ul>
                             </li>
 
@@ -176,9 +171,9 @@
 
             <!--app-content open-->
          <!--app-content open-->
-            <section layout:fragment="content">
+            <div layout:fragment="content" class="main-content app-content mt-0">
 
-            </section>
+            </div>
 
         <!--app-content closed-->
             <!--app-content close-->

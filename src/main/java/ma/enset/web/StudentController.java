@@ -63,7 +63,7 @@ public class StudentController {
     }
 
     @PostMapping("/admin/students")
-    public String saveStudent(@Valid Student student,@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = "10")  int size, BindingResult bindingResult) {
+    public String saveStudent(@Valid @ModelAttribute("student")  Student student,BindingResult bindingResult,@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = "10")  int size) {
         if(bindingResult.hasErrors()) {
             return "newStudent";
         }

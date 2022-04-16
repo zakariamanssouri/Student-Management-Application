@@ -41,7 +41,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 }).collect(Collectors.toList());*/
 
 
-        User user = new User(appUser.getUsername(), appUser.getPassword(), authorities);
-        return user;
+        return new User(appUser.getUsername(), appUser.getPassword(), authorities);
     }
 }

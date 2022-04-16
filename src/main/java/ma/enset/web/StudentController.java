@@ -1,20 +1,22 @@
 package ma.enset.web;
 
 import lombok.AllArgsConstructor;
+import ma.enset.entities.Gender;
 import ma.enset.entities.Student;
 import ma.enset.repositories.StudentRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import javax.validation.Valid;
 
 @Controller
 @AllArgsConstructor
+@Transactional
 public class StudentController {
 
     private StudentRepository studentRepository;
@@ -41,8 +43,39 @@ public class StudentController {
     }
 
     @DeleteMapping("/admin/delete")
-    public String deleteStudent(@RequestParam(name = "id") int id,@RequestParam(name = "page") int page,@RequestParam(name = "size") int size ){
+    public String deleteStudent(@RequestParam(name = "id") int id, @RequestParam(name = "page") int page, @RequestParam(name = "size") int size) {
         studentRepository.deleteById((long) id);
-        return "redirect:/students?page="+page+"&size="+size;
+        return "redirect:/students?page=" + page + "&size=" + size;
     }
+
+    @GetMapping("/admin/students/edit")
+    public String editStudent(@RequestParam int id, @RequestParam int page, @RequestParam int size,Model model) {
+        model.addAttribute("student", studentRepository.findById((long) id).orElse(null));
+        model.addAttribute("page", page);
+        model.addAttribute("size", size);
+        return "editStudent";
+    }
+
+    @GetMapping("/admin/students/new")
+    public String newStudent(Model model) {
+        model.addAttribute("student", new Student());
+        model.addAttribute("MALE", Gender.MALE);
+        model.addAttribute("FEMALE", Gender.FEMALE);
+        return "newStudent";
+    }
+
+    @PostMapping("/admin/students")
+    public String saveStudent(@Valid Student student,@RequestParam int page,@RequestParam  int size, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) {
+            return "newStudent";
+        }
+        else {
+            studentRepository.save(student);
+            return "redirect:/students?page=" + page + "&size=" + size;
+
+
+        }
+    }
+
+
 }

@@ -59,13 +59,11 @@ public class StudentController {
     @GetMapping("/admin/students/new")
     public String newStudent(Model model) {
         model.addAttribute("student", new Student());
-        model.addAttribute("MALE", Gender.MALE);
-        model.addAttribute("FEMALE", Gender.FEMALE);
         return "newStudent";
     }
 
     @PostMapping("/admin/students")
-    public String saveStudent(@Valid Student student,@RequestParam int page,@RequestParam  int size, BindingResult bindingResult) {
+    public String saveStudent(@Valid Student student,@RequestParam(defaultValue = "0") int page,@RequestParam(defaultValue = "10")  int size, BindingResult bindingResult) {
         if(bindingResult.hasErrors()) {
             return "newStudent";
         }

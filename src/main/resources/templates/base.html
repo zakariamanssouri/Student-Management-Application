@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org/extras/spring-security ">
 
 <head>
     <!-- META DATA -->
@@ -12,111 +13,114 @@
     <meta name="description" content="Students">
 
     <!-- FAVICON -->
-    <link rel="shortcut icon" type="image/x-icon" href="/images/brand/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="/images/brand/favicon.ico"/>
 
     <!-- TITLE -->
     <title>Students </title>
 
     <!-- BOOTSTRAP CSS -->
-    <link id="style" href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link id="style" href="/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- STYLE CSS -->
-    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet"/>
 
     <!--- FONT-ICONS CSS -->
-    <link href="/css/icons.css" rel="stylesheet" />
+    <link href="/css/icons.css" rel="stylesheet"/>
 
     <!-- COLOR SKIN CSS -->
-    <link id="theme" rel="stylesheet" type="text/css" media="all" href="/colors/color1.css" />
+    <link id="theme" rel="stylesheet" type="text/css" media="all" href="/colors/color1.css"/>
 
 </head>
 
 <body class="app sidebar-mini ltr light-mode">
 
 
-    <!-- PAGE -->
-    <div class="page">
-        <div class="page-main">
+<!-- PAGE -->
+<div class="page">
+    <div class="page-main">
 
-            <!-- app-Header -->
-            <div class="app-header header sticky">
-                <div class="container-fluid main-container">
-                    <div class="d-flex">
-                        <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
-                        <!-- sidebar-toggle-->
-                        <a class="logo-horizontal " href="index.html">
-                            <img src="/images/brand/studentlogo.svg" class="header-brand-img light-logo1"
-                                alt="logo">
-                        </a>
-                        <!-- LOGO -->
-                      
-                        <div class="d-flex order-lg-2 ms-auto header-right-icons">
-                            <div class="dropdown d-none">
-                                <a href="javascript:void(0)" class="nav-link icon" data-bs-toggle="dropdown">
-                                    <i class="fe fe-search"></i>
-                                </a>
-                                <div class="dropdown-menu header-search dropdown-menu-start">
-                                    <div class="input-group w-100 p-2">
-                                        <input type="text" class="form-control" placeholder="Search....">
-                                        <div class="input-group-text btn btn-primary">
-                                            <i class="fe fe-search" aria-hidden="true"></i>
-                                        </div>
+        <!-- app-Header -->
+        <div class="app-header header sticky">
+            <div class="container-fluid main-container">
+                <div class="d-flex">
+                    <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar"
+                       href="javascript:void(0)"></a>
+                    <!-- sidebar-toggle-->
+                    <a class="logo-horizontal " href="index.html">
+                        <img src="/images/brand/studentlogo.svg" class="header-brand-img light-logo1"
+                             alt="logo">
+                    </a>
+                    <!-- LOGO -->
+
+                    <div class="d-flex order-lg-2 ms-auto header-right-icons">
+                        <div class="dropdown d-none">
+                            <a href="javascript:void(0)" class="nav-link icon" data-bs-toggle="dropdown">
+                                <i class="fe fe-search"></i>
+                            </a>
+                            <div class="dropdown-menu header-search dropdown-menu-start">
+                                <div class="input-group w-100 p-2">
+                                    <input type="text" class="form-control" placeholder="Search....">
+                                    <div class="input-group-text btn btn-primary">
+                                        <i class="fe fe-search" aria-hidden="true"></i>
                                     </div>
                                 </div>
                             </div>
-                            <!-- SEARCH -->
-                            <button class="navbar-toggler navresponsive-toggler d-lg-none ms-auto" type="button"
+                        </div>
+                        <!-- SEARCH -->
+                        <button class="navbar-toggler navresponsive-toggler d-lg-none ms-auto" type="button"
                                 data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent-4"
                                 aria-controls="navbarSupportedContent-4" aria-expanded="false"
                                 aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon fe fe-more-vertical"></span>
-                            </button>
-                            <div class="navbar navbar-collapse responsive-navbar p-0">
-                                <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-                                    <div class="d-flex order-lg-2">
-                                        <div class="dropdown d-lg-none d-flex">
-                                            <a href="javascript:void(0)" class="nav-link icon" data-bs-toggle="dropdown">
-                                                <i class="fe fe-search"></i>
-                                            </a>
-                                            <div class="dropdown-menu header-search dropdown-menu-start">
-                                                <div class="input-group w-100 p-2">
-                                                    <input type="text" class="form-control" placeholder="Search....">
-                                                    <div class="input-group-text btn btn-primary">
-                                                        <i class="fa fa-search" aria-hidden="true"></i>
-                                                    </div>
+                            <span class="navbar-toggler-icon fe fe-more-vertical"></span>
+                        </button>
+                        <div class="navbar navbar-collapse responsive-navbar p-0">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+                                <div class="d-flex order-lg-2">
+                                    <div class="dropdown d-lg-none d-flex">
+                                        <a href="javascript:void(0)" class="nav-link icon" data-bs-toggle="dropdown">
+                                            <i class="fe fe-search"></i>
+                                        </a>
+                                        <div class="dropdown-menu header-search dropdown-menu-start">
+                                            <div class="input-group w-100 p-2">
+                                                <input type="text" class="form-control" placeholder="Search....">
+                                                <div class="input-group-text btn btn-primary">
+                                                    <i class="fa fa-search" aria-hidden="true"></i>
                                                 </div>
+                                            </div>
 
-                                            </div>
                                         </div>
-                                      
-                                   
-                                       
-                              
-                                   
-                                        <div class="dropdown d-flex">
-                                            <a class="nav-link icon full-screen-link nav-link-bg">
-                                                <i class="fe fe-minimize fullscreen-button"></i>
-                                            </a>
-                                        </div>
-                                        <!-- FULL-SCREEN -->
-                                  
-                                        <div class="dropdown d-flex profile-1">
-                                            <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
-                                                <img src="/images/users/default.png" alt="profile-user"
-                                                    class="avatar  profile-user brround cover-image" style="width: 50px;height: 50px;">
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                                <div class="drop-heading">
-                                                    <div class="text-center">
-                                                        <h5 class="text-dark mb-0 fs-14 fw-semibold">Username</h5>
-                                                        <small class="text-muted">Senior Admin</small>
-                                                    </div>
+                                    </div>
+
+
+                                    <div class="dropdown d-flex">
+                                        <a class="nav-link icon full-screen-link nav-link-bg">
+                                            <i class="fe fe-minimize fullscreen-button"></i>
+                                        </a>
+                                    </div>
+                                    <!-- FULL-SCREEN -->
+
+                                    <div class="dropdown d-flex profile-1">
+                                        <a href="javascript:void(0)" data-bs-toggle="dropdown"
+                                           class="nav-link leading-none d-flex">
+                                            <img src="/images/users/default.png" alt="profile-user"
+                                                 class="avatar  profile-user brround cover-image"
+                                                 style="width: 50px;height: 50px;">
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" >
+                                            <div class="drop-heading">
+                                                <div class="text-center" sec:authorize="isAuthenticated()">
+                                                    <h5 class="text-dark mb-0 fs-14 fw-semibold" sec:authentication="name"></h5>
+                                                    <span class="text-muted" ></span>
                                                 </div>
-                                                
-                                                <a class="dropdown-item" href="login.html">
-                                                    <i class="dropdown-icon fe fe-alert-circle"></i> Sign out
-                                                </a>
                                             </div>
+
+                                            <a class="dropdown-item" th:href="@{/logout}" sec:authorize="isAuthenticated()">
+                                                <i class="dropdown-icon fe fe-alert-circle"></i> Sign out
+                                            </a>
+
+                                            <a class="dropdown-item" th:href="@{/login}" sec:authorize="isAnonymous()">
+                                                <i class="dropdown-icon fe fe-alert-circle"></i> Sign in
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -125,100 +129,102 @@
                     </div>
                 </div>
             </div>
-            <!-- /app-Header -->
+        </div>
+        <!-- /app-Header -->
 
-            <!--APP-SIDEBAR-->
-            <div class="sticky">
-                <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
-                <div class="app-sidebar">
-                    <div class="side-header">
-                        <a class="header-brand1" href="index.html">
-                            <img src="/images/brand/studentlogo.svg" class="header-brand-img light-logo1"
-                                alt="logo">
-                        </a>
-                        <!-- LOGO -->
+        <!--APP-SIDEBAR-->
+        <div class="sticky">
+            <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
+            <div class="app-sidebar">
+                <div class="side-header">
+                    <a class="header-brand1" href="index.html">
+                        <img src="/images/brand/studentlogo.svg" class="header-brand-img light-logo1"
+                             alt="logo">
+                    </a>
+                    <!-- LOGO -->
+                </div>
+                <div class="main-sidemenu">
+                    <div class="slide-left disabled" id="slide-left">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/>
+                        </svg>
                     </div>
-                    <div class="main-sidemenu">
-                        <div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg"
-                                fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" />
-                            </svg></div>
-                        <ul class="side-menu">
-                            <li class="sub-category">
-                                <h3>Main</h3>
-                            </li>
+                    <ul class="side-menu">
+                        <li class="sub-category">
+                            <h3>Main</h3>
+                        </li>
 
 
-                            <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fe fe-user"></i><span class="side-menu__label">Manage Students</span><i class="angle fe fe-chevron-right"></i></a>
-                                <ul class="slide-menu">
-                                    <li class="side-menu-label1"><a href="javascript:void(0)">Apps</a></li>
-                                    <li><a th:href="@{/students}" class="slide-item"> Students list</a></li>
-                                    <li><a th:href="@{/admin/students/new}" class="slide-item"> New Student</a></li>
-                                </ul>
-                            </li>
+                        <li class="slide">
+                            <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i
+                                    class="side-menu__icon fe fe-user"></i><span class="side-menu__label">Manage Students</span><i
+                                    class="angle fe fe-chevron-right"></i></a>
+                            <ul class="slide-menu" sec:authorize="isAuthenticated()">
+                                <li class="side-menu-label1"><a href="javascript:void(0)">Apps</a></li>
+                                <li><a th:href="@{/students}" class="slide-item"> Students list</a></li>
+                                <li><a th:href="@{/admin/students/new}" class="slide-item"  sec:authorize="hasAuthority('ADMIN')"> New Student</a></li>
+                            </ul>
+                        </li>
 
-                        
-                        </ul>
-                        <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
-                                width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z" />
-                            </svg></div>
+
+                    </ul>
+                    <div class="slide-right" id="slide-right">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191"
+                             width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"/>
+                        </svg>
                     </div>
                 </div>
-                <!--/APP-SIDEBAR-->
             </div>
+            <!--/APP-SIDEBAR-->
+        </div>
 
-            <!--app-content open-->
-         <!--app-content open-->
-            <div layout:fragment="content" class="main-content app-content mt-0">
-
-            </div>
-
-        <!--app-content closed-->
-            <!--app-content close-->
+        <!--app-content open-->
+        <!--app-content open-->
+        <div layout:fragment="content" class="main-content app-content mt-0">
 
         </div>
 
-
-      
-
+        <!--app-content closed-->
+        <!--app-content close-->
 
     </div>
 
-    <!-- BACK-TO-TOP -->
-    <a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
 
-    <!-- JQUERY JS -->
-    <script src="/js/jquery.min.js"></script>
+</div>
 
-    <!-- BOOTSTRAP JS -->
-    <script src="/plugins/bootstrap/js/popper.min.js"></script>
-    <script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+<!-- BACK-TO-TOP -->
+<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
 
- 
-    
-    <!-- SIDEBAR JS -->
-    <script src="/plugins/sidebar/sidebar.js"></script>
+<!-- JQUERY JS -->
+<script src="/js/jquery.min.js"></script>
 
-   
-    <!-- INTERNAL SELECT2 JS -->
-    <script src="/plugins/select2/select2.full.min.js"></script>
-
-    <!-- INTERNAL Data tables js-->
-    <script src="/plugins/datatable/js/jquery.dataTables.min.js"></script>
-    <script src="/plugins/datatable/js/dataTables.bootstrap5.js"></script>
-    <script src="/plugins/datatable/dataTables.responsive.min.js"></script>
+<!-- BOOTSTRAP JS -->
+<script src="/plugins/bootstrap/js/popper.min.js"></script>
+<script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
 
 
+<!-- SIDEBAR JS -->
+<script src="/plugins/sidebar/sidebar.js"></script>
 
-    <!-- SIDE-MENU JS-->
-    <script src="/plugins/sidemenu/sidemenu.js"></script>
 
-    <!-- INTERNAL INDEX JS -->
+<!-- INTERNAL SELECT2 JS -->
+<script src="/plugins/select2/select2.full.min.js"></script>
 
-    <!-- Color Theme js -->
-    <script src="/js/themeColors.js"></script>
+<!-- INTERNAL Data tables js-->
+<script src="/plugins/datatable/js/jquery.dataTables.min.js"></script>
+<script src="/plugins/datatable/js/dataTables.bootstrap5.js"></script>
+<script src="/plugins/datatable/dataTables.responsive.min.js"></script>
+
+
+<!-- SIDE-MENU JS-->
+<script src="/plugins/sidemenu/sidemenu.js"></script>
+
+<!-- INTERNAL INDEX JS -->
+
+<!-- Color Theme js -->
+<script src="/js/themeColors.js"></script>
 
 
 </body>

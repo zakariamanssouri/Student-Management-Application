@@ -3,6 +3,8 @@
       layout:decorate="base"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org/extras/spring-security "
 >
 <head>
     <meta charset="UTF-8">
@@ -59,7 +61,7 @@
                                         <th class="text-center">BirthDate</th>
                                         <th class="text-center">Gender</th>
                                         <th class="text-center">En Règle</th>
-                                        <th class="text-center">Actions</th>
+                                        <th class="text-center" sec:authorize="hasAuthority('ADMIN')">Actions</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -76,7 +78,7 @@
                                         <td class="text-nowrap align-middle text-center"
                                             th:text="${student.isEnRegle()}"></td>
 
-                                        <td class="text-center align-middle">
+                                        <td class="text-center align-middle" sec:authorize="hasAuthority('ADMIN')">
                                             <div class="btn-group align-top">
 
                                                 <!-- -->
